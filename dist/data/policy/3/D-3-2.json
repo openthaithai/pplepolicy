@@ -1,0 +1,55 @@
+{
+  "policy": {
+    "id": 57,
+    "slug": "D-3-2",
+    "type": "Folder",
+    "title": "เพิ่มโอกาส SME",
+    "content": null,
+    "parentLevel1": {
+      "id": 8,
+      "slug": "D",
+      "title": "โมเดลเศรษฐกิจใหม่"
+    },
+    "parentLevel2": {
+      "id": 26,
+      "slug": "D-3",
+      "title": "สร้างโอกาสทางเศรษฐกิจด้วยดิจิทัล"
+    },
+    "summary": null,
+    "budgetAmount": null,
+    "timelineYears": null,
+    "image": null,
+    "contentBlocks": [],
+    "tags": [],
+    "extraImages": [],
+    "children": [
+      {
+        "id": 88,
+        "title": "ยกระดับธุรกิจไทยด้วย Digital & AI",
+        "slug": "D-3-2-01",
+        "type": "File",
+        "image": "311e1f21-cd65-4de8-8e6c-42db7bf2c195",
+        "children": []
+      },
+      {
+        "id": 89,
+        "title": "สร้าง \"ตลาดเปิดดิจิทัล“ สู้อีคอมเมิร์ซต่างชาติ ทวงคืนโอกาสคนไทย",
+        "slug": "D-3-2-02",
+        "type": "File",
+        "image": "c012acfc-9a5f-4691-84b6-6b40f7e35e92",
+        "children": []
+      },
+      {
+        "id": 90,
+        "title": "ปรับยุทธศาสตร์การค้า บุกตลาดอาเซียนผ่านอีคอมเมิร์ซ",
+        "slug": "D-3-2-03",
+        "type": "File",
+        "image": "5f78ec63-5e4b-48dc-9da0-3809b6dc46ff",
+        "children": []
+      }
+    ],
+    "relatedPoliciesLevel4": [],
+    "relatedPoliciesLevel3": []
+  },
+  "level": 3
+}

@@ -1,0 +1,47 @@
+{
+  "policy": {
+    "id": 59,
+    "slug": "C-6-5",
+    "type": "Folder",
+    "title": "การพัฒนาโรงเรียน",
+    "content": null,
+    "parentLevel1": {
+      "id": 11,
+      "slug": "C",
+      "title": "คุณภาพชีวิต"
+    },
+    "parentLevel2": {
+      "id": 22,
+      "slug": "C-6",
+      "title": "การศึกษา (การเรียนรู้)"
+    },
+    "summary": null,
+    "budgetAmount": null,
+    "timelineYears": null,
+    "image": null,
+    "contentBlocks": [],
+    "tags": [],
+    "extraImages": [],
+    "children": [
+      {
+        "id": 85,
+        "title": "ปฏิรูปโรงเรียนขนาดเล็ก บริหารงบอย่างเป็นธรรม กระจายอำนาจสู่ท้องถิ่น",
+        "slug": "C-6-5-01",
+        "type": "File",
+        "image": "a6d1b62d-2c10-4e3a-92da-a7bd92f8aaf7",
+        "children": []
+      },
+      {
+        "id": 164,
+        "title": "ให้อำนาจโรงเรียนบริหารทรัพยากรเอง",
+        "slug": "C-6-5-02",
+        "type": "File",
+        "image": "68ceaaaf-03fc-4dc9-b59f-838fc7338e0b",
+        "children": []
+      }
+    ],
+    "relatedPoliciesLevel4": [],
+    "relatedPoliciesLevel3": []
+  },
+  "level": 3
+}

@@ -24,17 +24,12 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Debug - List files
-        run: |
-          ls -la
-          ls -la out
-
       - name: Deploy via SCP
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          source: "out/*"
+          source: "dist/*"
           target: ${{ secrets.TARGET_DIR }}
           strip_components: 1

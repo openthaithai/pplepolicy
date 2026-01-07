@@ -1,0 +1,47 @@
+{
+  "policy": {
+    "id": 101,
+    "slug": "B-3-4",
+    "type": "Folder",
+    "title": "การป้องกันและจัดการสาธารณภัย",
+    "content": null,
+    "parentLevel1": {
+      "id": 10,
+      "slug": "B",
+      "title": "ประชาธิปไตยและความมั่นคงใหม่"
+    },
+    "parentLevel2": {
+      "id": 14,
+      "slug": "B-3",
+      "title": "ความมั่นคงใหม่"
+    },
+    "summary": null,
+    "budgetAmount": null,
+    "timelineYears": null,
+    "image": null,
+    "contentBlocks": [],
+    "tags": [],
+    "extraImages": [],
+    "children": [
+      {
+        "id": 159,
+        "title": "สร้างระบบการจัดการภัยพิบัติใหม่บนฐานความเสี่ยง",
+        "slug": "B-3-4-01",
+        "type": "File",
+        "image": "b6482428-038f-4bbd-a283-3cdbacfb2f07",
+        "children": []
+      },
+      {
+        "id": 160,
+        "title": "ยุติมลพิษผ่านสายน้ำข้ามแดน",
+        "slug": "B-3-4-02",
+        "type": "File",
+        "image": "928662bb-e95b-416c-9e2a-1e5c7f331f80",
+        "children": []
+      }
+    ],
+    "relatedPoliciesLevel4": [],
+    "relatedPoliciesLevel3": []
+  },
+  "level": 3
+}
