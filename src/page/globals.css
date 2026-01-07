@@ -15,7 +15,7 @@ body {
   padding: 0;
   background-color: var(--color-bg);
   color: var(--color-text);
-  /* font-family will be set by the loading class from next/font */
+  font-family: var(--font-prompt);
   overflow: hidden;
   /* Prevent body scroll, ReactFlow handles it */
   width: 100vw;

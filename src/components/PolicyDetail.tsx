@@ -80,6 +80,8 @@ const PolicyDetail = ({ node, breadcrumbs = [], onClose }: PolicyDetailProps) =>
                                 dangerouslySetInnerHTML={{ __html: displayPolicy.content }}
                             />
                         )}
+
+
                     </>
                 )}
             </div>

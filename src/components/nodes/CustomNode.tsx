@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { Handle, Position, NodeProps } from 'reactflow';
 import { ChevronRight, ChevronDown, FileText, Folder } from 'lucide-react';
 import styles from './CustomNode.module.css';
-import policyPlaceholder from '@/assets/images/placeholder_policy.png';
+import policyPlaceholder from '/placeholder_policy.png';
 
 interface CustomNodeData {
     title: string;
@@ -56,6 +56,7 @@ const CustomNode = ({ data, id, isConnectable }: NodeProps<CustomNodeData>) => {
                 className={styles.handle}
             />
 
+            {/* Background Image or Fallback */}
             {/* Background Image or Fallback */}
             <div
                 className={styles.imageLayer}

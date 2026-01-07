@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 import { PolicyResponse, PolicyNode } from '@/types/policy';
 
-const BASE_URL = 'https://election69.peoplesparty.or.th/data/policy';
+const BASE_URL = '/data/policy';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
