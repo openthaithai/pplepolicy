@@ -1,0 +1,25 @@
+{
+  "policy": {
+    "id": 31,
+    "slug": "D-8",
+    "title": "ต่างประเทศ",
+    "content": null,
+    "type": "Folder",
+    "parentLevel1": {
+      "id": 8,
+      "slug": "D",
+      "title": "โมเดลเศรษฐกิจใหม่"
+    },
+    "children": [
+      {
+        "id": 79,
+        "title": "รวมศูนย์บริการคนไทยในต่างประเทศไว้ที่จุดเดียว",
+        "slug": "D-8-1",
+        "type": "File",
+        "image": "ed007fb8-2294-40a1-af80-e200a017abb5",
+        "children": []
+      }
+    ]
+  },
+  "level": 2
+}

@@ -1,0 +1,63 @@
+{
+  "policy": {
+    "id": 66,
+    "slug": "C-4-1",
+    "type": "Folder",
+    "title": "เด็กปฐมวัย",
+    "content": null,
+    "parentLevel1": {
+      "id": 11,
+      "slug": "C",
+      "title": "คุณภาพชีวิต"
+    },
+    "parentLevel2": {
+      "id": 19,
+      "slug": "C-4",
+      "title": "สวัสดิการ"
+    },
+    "summary": null,
+    "budgetAmount": null,
+    "timelineYears": null,
+    "image": null,
+    "contentBlocks": [],
+    "tags": [],
+    "extraImages": [],
+    "children": [
+      {
+        "id": 106,
+        "title": "ปฏิรูปศูนย์การศึกษาเด็กพิเศษ",
+        "slug": "C-4-1-04",
+        "type": "File",
+        "image": "7a12e611-c613-4f1f-a950-623ebd224ff8",
+        "children": []
+      },
+      {
+        "id": 113,
+        "title": "เงินอุดหนุนเด็กเล็ก",
+        "slug": "C-4-1-01",
+        "type": "File",
+        "image": "17b2ea1a-105b-4ec2-ac79-3f3a50337eac",
+        "children": []
+      },
+      {
+        "id": 114,
+        "title": "พัฒนาศูนย์เลี้ยงเด็กและศูนย์พัฒนาเด็กเล็ก ",
+        "slug": "C-4-1-02",
+        "type": "File",
+        "image": "70b4ff9b-e901-40f7-b81d-77edbff17641",
+        "children": []
+      },
+      {
+        "id": 115,
+        "title": "ของขวัญเด็กแรกเกิด (Baby Box)",
+        "slug": "C-4-1-03",
+        "type": "File",
+        "image": "db2f53f2-48c8-4fca-9800-6a603188563b",
+        "children": []
+      }
+    ],
+    "relatedPoliciesLevel4": [],
+    "relatedPoliciesLevel3": []
+  },
+  "level": 3
+}

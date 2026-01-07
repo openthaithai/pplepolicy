@@ -1,0 +1,47 @@
+{
+  "policy": {
+    "id": 62,
+    "slug": "C-6-8",
+    "type": "Folder",
+    "title": "การเชื่อมต่ออุดมศึกษา",
+    "content": null,
+    "parentLevel1": {
+      "id": 11,
+      "slug": "C",
+      "title": "คุณภาพชีวิต"
+    },
+    "parentLevel2": {
+      "id": 22,
+      "slug": "C-6",
+      "title": "การศึกษา (การเรียนรู้)"
+    },
+    "summary": null,
+    "budgetAmount": null,
+    "timelineYears": null,
+    "image": null,
+    "contentBlocks": [],
+    "tags": [],
+    "extraImages": [],
+    "children": [
+      {
+        "id": 91,
+        "title": "สอบ TCAS ฟรี",
+        "slug": "C-6-8-01",
+        "type": "File",
+        "image": "dcfff666-4ef0-4280-b0e3-fca5125feb14",
+        "children": []
+      },
+      {
+        "id": 92,
+        "title": "แก้ปัญหา กยศ. เสริมสภาพคล่อง ช่วยผู้กู้หางาน",
+        "slug": "C-6-8-02",
+        "type": "File",
+        "image": "f09eb9a8-ddd5-407c-b0fe-7a24c6ec605e",
+        "children": []
+      }
+    ],
+    "relatedPoliciesLevel4": [],
+    "relatedPoliciesLevel3": []
+  },
+  "level": 3
+}

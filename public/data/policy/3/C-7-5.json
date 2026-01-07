@@ -1,0 +1,55 @@
+{
+  "policy": {
+    "id": 88,
+    "slug": "C-7-5",
+    "type": "Folder",
+    "title": "การบริหารจัดการน้ำ",
+    "content": null,
+    "parentLevel1": {
+      "id": 11,
+      "slug": "C",
+      "title": "คุณภาพชีวิต"
+    },
+    "parentLevel2": {
+      "id": 21,
+      "slug": "C-7",
+      "title": "น้ำ"
+    },
+    "summary": null,
+    "budgetAmount": null,
+    "timelineYears": null,
+    "image": null,
+    "contentBlocks": [],
+    "tags": [],
+    "extraImages": [],
+    "children": [
+      {
+        "id": 127,
+        "title": "ลงทุนปีละ 60,000 ล้าน ปฏิรูปการจัดการลุ่มน้ำทั้งระบบ",
+        "slug": "C-7-5-01",
+        "type": "File",
+        "image": "a5cc5226-ce86-4b23-bd20-eaaf2a0b0747",
+        "children": []
+      },
+      {
+        "id": 162,
+        "title": "ยุทธศาสตร์รับมือน้ำท่วมในพื้นที่ลุ่มน้ำ",
+        "slug": "C-7-5-02",
+        "type": "File",
+        "image": "9d427418-263a-4a03-b5a7-12adef1a8b19",
+        "children": []
+      },
+      {
+        "id": 163,
+        "title": "สร้างภูมิคุ้มกันให้เกษตรกรนอกเขตชลประทาน 1 ล้านไร่",
+        "slug": "C-7-5-03",
+        "type": "File",
+        "image": "9af3931e-a24b-4544-bbae-760ca62181cb",
+        "children": []
+      }
+    ],
+    "relatedPoliciesLevel4": [],
+    "relatedPoliciesLevel3": []
+  },
+  "level": 3
+}
