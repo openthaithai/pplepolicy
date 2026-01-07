@@ -9,14 +9,8 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as PplepolicyRouteImport } from './routes/pplepolicy'
 import { Route as IndexRouteImport } from './routes/index'
 
-const PplepolicyRoute = PplepolicyRouteImport.update({
-  id: '/pplepolicy',
-  path: '/pplepolicy',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -25,39 +19,28 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/pplepolicy': typeof PplepolicyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/pplepolicy': typeof PplepolicyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/pplepolicy': typeof PplepolicyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/pplepolicy'
+  fullPaths: '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/pplepolicy'
-  id: '__root__' | '/' | '/pplepolicy'
+  to: '/'
+  id: '__root__' | '/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  PplepolicyRoute: typeof PplepolicyRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/pplepolicy': {
-      id: '/pplepolicy'
-      path: '/pplepolicy'
-      fullPath: '/pplepolicy'
-      preLoaderRoute: typeof PplepolicyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -70,7 +53,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  PplepolicyRoute: PplepolicyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
