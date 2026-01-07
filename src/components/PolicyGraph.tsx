@@ -1,4 +1,4 @@
-'use client';
+
 
 import React, { useCallback, useEffect, useState } from 'react';
 import ReactFlow, {
@@ -47,7 +47,7 @@ const PolicyGraphContent = ({ onNodeSelect }: PolicyGraphProps) => {
 
     const fetchChildrenJson = async (level: number, slug: string) => {
         try {
-            const response = await fetch(`https://election69.peoplesparty.or.th/data/policy/${level}/${slug}.json`);
+            const response = await fetch(`/data/policy/${level}/${slug}.json`);
             if (!response.ok) throw new Error("Failed");
             const json = await response.json();
             return json.policy.children;
@@ -460,9 +460,212 @@ const PolicyGraphContent = ({ onNodeSelect }: PolicyGraphProps) => {
         setSelectedNodeId(null);
     }, []);
 
+    const handleSearchSelect = useCallback(async (node: PolicyNode) => {
+        const targetSlug = node.slug;
+        const parts = targetSlug.split('-');
+
+        let currentSlug = parts[0];
+        let currentLevel = 1;
+
+        // Expand loop for ancestors
+        for (let i = 0; i < parts.length - 1; i++) {
+            const slugToExpand = parts.slice(0, i + 1).join('-');
+            const levelToExpand = i + 1;
+
+            // Check if node exists in current nodes state
+            // Note: Since setNodes is async, we can't rely on 'nodes' state updated in previous loop iteration.
+            // But we can check if it's already expanded or loaded.
+            // Ideally we fetch sequentially and build a cumulative list of new nodes.
+
+            // However, simpler approach: Just trigger expansion if we can find the node, 
+            // or if we can't find it, we might need to assume it will be added by previous expansion.
+            // This is tricky with async state.
+
+            // Alternative: Re-implement expansion here without relying on 'nodes' state for intermediate steps.
+            // We can fetch data, build nodes/edges arrays, and call setNodes ONCE at the end.
+        }
+
+        // BETTER APPROACH:
+        // 1. Identify all ancestor slugs that need expansion.
+        // 2. Fetch all of them in parallel or sequence.
+        // 3. Construct all missing nodes and edges.
+        // 4. Update state once.
+
+        const ancestorSlugs: { slug: string; level: number }[] = [];
+        for (let i = 0; i < parts.length - 1; i++) {
+            ancestorSlugs.push({
+                slug: parts.slice(0, i + 1).join('-'),
+                level: i + 1
+            });
+        }
+
+        const existingNodeIds = new Set(nodes.map(n => n.id));
+        const newNodes: Node[] = [];
+        const newEdges: Edge[] = [];
+
+        // Identify which ancestors are NOT expanded/loaded.
+        // But since we don't know if they are loaded without checking 'nodes', 
+        // and 'nodes' might be stale if we chain updates... 
+        // Actually, we can just fetch children for ALL ancestors just to be safe, 
+        // or check 'nodes' (which is stable enough for start of function).
+
+        const promises = ancestorSlugs.map(async ({ slug, level }) => {
+            const children = await fetchChildrenJson(level, slug);
+            return { parentSlug: slug, children };
+        });
+
+        const results = await Promise.all(promises);
+
+        results.forEach(({ parentSlug, children }) => {
+            if (!children) return;
+
+            // Mark parent as expanded (we'll need to update parent node in state)
+
+            children.forEach((child: any) => {
+                const childId = child.slug;
+
+                // Add node if not exists (checked against generic 'existing' + 'new')
+                // We use a temp set for this local scope
+
+                newNodes.push({
+                    id: childId,
+                    type: 'custom',
+                    data: {
+                        title: child.title,
+                        type: child.type,
+                        slug: child.children ? child.slug : childId, // slug consistency
+                        level: (child.slug.split('-').length),
+                        hasLoaded: false, // We haven't loaded ITS children yet
+                        image: child.image,
+                        // If this child is an ancestor of target, mark it expanded? 
+                        // We will update that below.
+                    },
+                    position: { x: 0, y: 0 }
+                });
+
+                newEdges.push({
+                    id: `${parentSlug}-${childId}`,
+                    source: parentSlug,
+                    target: childId,
+                    type: 'smoothstep',
+                    style: { stroke: 'rgba(244, 117, 36, 0.3)', strokeWidth: 1.5 },
+                    markerEnd: {
+                        type: MarkerType.ArrowClosed,
+                        color: 'rgba(244, 117, 36, 0.3)',
+                    },
+                });
+            });
+        });
+
+
+        setNodes((nds) => {
+            const nodeMap = new Map(nds.map(n => [n.id, n]));
+
+            // Merge new nodes
+            newNodes.forEach(n => {
+                if (!nodeMap.has(n.id)) {
+                    nodeMap.set(n.id, n);
+                }
+            });
+
+            // Update ancestor expansion states
+            ancestorSlugs.forEach(({ slug }) => {
+                const n = nodeMap.get(slug);
+                if (n) {
+                    nodeMap.set(slug, {
+                        ...n,
+                        data: { ...n.data, isExpanded: true, hasLoaded: true, loading: false }
+                    });
+                }
+            });
+
+            // Highlight target
+            const targetNode = nodeMap.get(targetSlug);
+            // We also need to un-dim others (handled by effect on selectedNodeId change)
+
+            return Array.from(nodeMap.values());
+        });
+
+        setEdges((eds) => {
+            const edgeMap = new Map(eds.map(e => [e.id, e]));
+
+            newEdges.forEach(e => {
+                if (!edgeMap.has(e.id)) {
+                    edgeMap.set(e.id, e);
+                }
+            });
+
+            // Unhide logic?
+            // If we are expanding, we should ensure edges from ancestors are visible/not hidden.
+            // Simplified: Just set hidden=false for derived edges.
+            ancestorSlugs.forEach(({ slug }) => {
+                // edges originating from this slug
+                // We can't easily iterate map values to find them efficiently without loop
+            });
+
+            // Brute force update all edges to be unhidden if they are part of the structure?
+            // Or rely on the fact that new edges are not hidden. 
+            // Existing edges might be hidden if previously collapsed.
+
+            // Let's iterate all edges and unhide if source is in ancestorSlugs
+            const ancestorSet = new Set(ancestorSlugs.map(a => a.slug));
+            const updatedEdges = Array.from(edgeMap.values()).map(e => {
+                if (ancestorSet.has(e.source)) {
+                    return { ...e, hidden: false };
+                }
+                return e;
+            });
+
+            return updatedEdges;
+        });
+
+        // Set selection (triggers highlight effect)
+        setSelectedNodeId(targetSlug);
+
+        // Center view on target?
+        // We need to wait for layout. Layout runs on effect [nodes, edges].
+        // But we want to zoom to the node.
+        // We can use a timeout or a specific effect for "search focus".
+        setTimeout(() => {
+            // const n = nodes.find(n => n.id === targetSlug) || newNodes.find(n => n.id === targetSlug);
+            // Note: 'nodes' here is stale closure from start of function.
+            // We can use react-flow instance to get node? internal state.
+            // Or just fitView/zoomTo.
+
+            // Simplest: trigger fitView
+            // fitView({ nodes: [{id: targetSlug}], duration: 800, padding: 0.5 }); 
+            // But fitView takes an array of nodes to fit. 
+            // We assume layout has updated positions. D3/Dagre layout effect is also async/useEffect driven.
+            // So 1000ms timeout might be enough.
+
+            // Open Detail Panel
+            // Construct breadcrumbs
+            const breadcrumbs: PolicyNode[] = ancestorSlugs.map(a => {
+                const n = nodes.find(n => n.id === a.slug) || newNodes.find(n => n.id === a.slug);
+                if (n) {
+                    return {
+                        id: n.id as any,
+                        slug: n.data.slug,
+                        title: n.data.title,
+                        type: n.data.type,
+                        level: n.data.level
+                    };
+                }
+                return null;
+            }).filter(Boolean) as PolicyNode[];
+
+            onNodeSelect(node, breadcrumbs);
+
+        }, 1000);
+
+    }, [nodes, fetchChildrenJson, fitView]);
+
     return (
         <div style={{ width: '100vw', height: '100vh', background: 'var(--color-bg)' }}>
-            <UIControls onCenter={() => fitView({ duration: 800, padding: 0.2 })} />
+            <UIControls
+                onCenter={() => fitView({ duration: 800, padding: 0.2 })}
+                onSearchSelect={handleSearchSelect}
+            />
             <ReactFlow
                 nodes={nodes}
                 edges={edges}
