@@ -1,0 +1,55 @@
+{
+  "policy": {
+    "id": 49,
+    "slug": "C-6-2",
+    "type": "Folder",
+    "title": "สวัสดิการนักเรียน",
+    "content": null,
+    "parentLevel1": {
+      "id": 11,
+      "slug": "C",
+      "title": "คุณภาพชีวิต"
+    },
+    "parentLevel2": {
+      "id": 22,
+      "slug": "C-6",
+      "title": "การศึกษา (การเรียนรู้)"
+    },
+    "summary": null,
+    "budgetAmount": null,
+    "timelineYears": null,
+    "image": null,
+    "contentBlocks": [],
+    "tags": [],
+    "extraImages": [],
+    "children": [
+      {
+        "id": 65,
+        "title": "เรียนฟรีไม่มีบิลเพิ่ม",
+        "slug": "C-6-2-01",
+        "type": "File",
+        "image": "abc72e27-ac45-430c-9b80-64d96062720b",
+        "children": []
+      },
+      {
+        "id": 66,
+        "title": "เพิ่มงบอาหารกลางวันนักเรียน",
+        "slug": "C-6-2-02",
+        "type": "File",
+        "image": "0c6fc521-26c2-4c63-9f93-069f70a1e6f8",
+        "children": []
+      },
+      {
+        "id": 67,
+        "title": "จ้างนักจิตวิทยาในโรงเรียน",
+        "slug": "C-6-2-03",
+        "type": "File",
+        "image": "b6ebd76c-2ad9-4f92-9bb1-9fdde2aadac7",
+        "children": []
+      }
+    ],
+    "relatedPoliciesLevel4": [],
+    "relatedPoliciesLevel3": []
+  },
+  "level": 3
+}

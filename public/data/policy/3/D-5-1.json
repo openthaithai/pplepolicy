@@ -1,0 +1,79 @@
+{
+  "policy": {
+    "id": 38,
+    "slug": "D-5-1",
+    "type": "Folder",
+    "title": "สร้างอุตสาหกรรมใหม่",
+    "content": null,
+    "parentLevel1": {
+      "id": 8,
+      "slug": "D",
+      "title": "โมเดลเศรษฐกิจใหม่"
+    },
+    "parentLevel2": {
+      "id": 28,
+      "slug": "D-5",
+      "title": "วางยุทธศาสตร์ไทยบนเวทีโลก"
+    },
+    "summary": null,
+    "budgetAmount": null,
+    "timelineYears": null,
+    "image": null,
+    "contentBlocks": [],
+    "tags": [],
+    "extraImages": [],
+    "children": [
+      {
+        "id": 57,
+        "title": "ส่งเสริมอุตสาหกรรมป้องกันประเทศ",
+        "slug": "D-5-1-01",
+        "type": "File",
+        "image": "f8274aae-0815-49d2-9d38-c47e16d3b2aa",
+        "children": []
+      },
+      {
+        "id": 58,
+        "title": "ส่งเสริมอุตสาหกรรมเครื่องมือแพทย์ครบวงจร",
+        "slug": "D-5-1-02",
+        "type": "File",
+        "image": "0b0cf4f7-54e3-42c1-a868-ec0f4953ba81",
+        "children": []
+      },
+      {
+        "id": 95,
+        "title": "สนับสนุนอุตสาหกรรมอวกาศ เพื่อยกระดับภาคเกษตรและรับมือภัยพิบัติ",
+        "slug": "D-5-1-03",
+        "type": "File",
+        "image": "cae587da-1651-4cbf-b00d-c5e3de3610ee",
+        "children": []
+      },
+      {
+        "id": 96,
+        "title": "เพิ่มบทบาทไทยในซัพพลายเชนเซมิคอนดักเตอร์",
+        "slug": "D-5-1-04",
+        "type": "File",
+        "image": "e9829544-0a94-46a6-a2d8-b53643aca1c2",
+        "children": []
+      },
+      {
+        "id": 97,
+        "title": "ส่งเสริมอุตสาหกรรมยานยนต์แห่งอนาคต",
+        "slug": "D-5-1-05",
+        "type": "File",
+        "image": "5015a34b-a5ec-47b4-987e-faf955ee0bcc",
+        "children": []
+      },
+      {
+        "id": 98,
+        "title": "ยกระดับความสามารถด้าน Digital และ AI ของไทย",
+        "slug": "D-5-1-06",
+        "type": "File",
+        "image": "4b11e590-6f80-44c7-9620-599582cd6b4e",
+        "children": []
+      }
+    ],
+    "relatedPoliciesLevel4": [],
+    "relatedPoliciesLevel3": []
+  },
+  "level": 3
+}

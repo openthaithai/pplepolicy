@@ -1,0 +1,71 @@
+{
+  "policy": {
+    "id": 35,
+    "slug": "D-4-1",
+    "type": "Folder",
+    "title": "สิทธิแรงงาน",
+    "content": null,
+    "parentLevel1": {
+      "id": 8,
+      "slug": "D",
+      "title": "โมเดลเศรษฐกิจใหม่"
+    },
+    "parentLevel2": {
+      "id": 27,
+      "slug": "D-4",
+      "title": "พลิกโฉม SME และเพิ่มทักษะคนไทย"
+    },
+    "summary": null,
+    "budgetAmount": null,
+    "timelineYears": null,
+    "image": null,
+    "contentBlocks": [],
+    "tags": [],
+    "extraImages": [],
+    "children": [
+      {
+        "id": 48,
+        "title": "ค่าจ้างขั้นต่ำเพิ่มทุกปีตามค่าครองชีพ",
+        "slug": "D-4-1-01",
+        "type": "File",
+        "image": "21601ada-f46c-433a-b2ed-118a8bc59aeb",
+        "children": []
+      },
+      {
+        "id": 49,
+        "title": "ทำงาน 40 ชม./สัปดาห์ มีสิทธิลาไปดูแลคนที่รัก",
+        "slug": "D-4-1-02",
+        "type": "File",
+        "image": "051f9adf-7f48-4de9-ab4b-be04db5a8f69",
+        "children": []
+      },
+      {
+        "id": 50,
+        "title": "แรงงานทุกกลุ่มตั้งสหภาพได้",
+        "slug": "D-4-1-03",
+        "type": "File",
+        "image": "0dbd5f69-9fc8-44dc-97b6-892b10364811",
+        "children": []
+      },
+      {
+        "id": 51,
+        "title": "คุ้มครองสิทธิแรงงานแพลตฟอร์ม",
+        "slug": "D-4-1-04",
+        "type": "File",
+        "image": "ffcafcc7-b266-4224-a071-9580c2b328af",
+        "children": []
+      },
+      {
+        "id": 52,
+        "title": "บริหารกองทุนประกันสังคมให้มืออาชีพ โปร่งใส ",
+        "slug": "D-4-1-05",
+        "type": "File",
+        "image": "08d46923-110a-404f-abe4-49a07484820c",
+        "children": []
+      }
+    ],
+    "relatedPoliciesLevel4": [],
+    "relatedPoliciesLevel3": []
+  },
+  "level": 3
+}

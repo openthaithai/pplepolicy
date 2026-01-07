@@ -1,0 +1,47 @@
+{
+  "policy": {
+    "id": 42,
+    "slug": "B-1-2",
+    "type": "Folder",
+    "title": "โปร่งใส ตรวจสอบได้",
+    "content": null,
+    "parentLevel1": {
+      "id": 10,
+      "slug": "B",
+      "title": "ประชาธิปไตยและความมั่นคงใหม่"
+    },
+    "parentLevel2": {
+      "id": 12,
+      "slug": "B-1",
+      "title": "กองทัพทันสมัย"
+    },
+    "summary": null,
+    "budgetAmount": null,
+    "timelineYears": null,
+    "image": null,
+    "contentBlocks": [],
+    "tags": [],
+    "extraImages": [],
+    "children": [
+      {
+        "id": 116,
+        "title": "ปฏิรูปกระบวนการยุติธรรมของกองทัพ (ศาลทหาร)",
+        "slug": "B-1-2-01",
+        "type": "File",
+        "image": "4c9eefed-4d59-4cee-bf34-7333942e8e24",
+        "children": []
+      },
+      {
+        "id": 117,
+        "title": "ทำให้ “ททบ.5 วิทยุ คลื่นความถี่กองทัพ” ตรวจสอบได้",
+        "slug": "B-1-2-02",
+        "type": "File",
+        "image": "e9ea4df1-3457-4e7b-ae4e-874e5e288c10",
+        "children": []
+      }
+    ],
+    "relatedPoliciesLevel4": [],
+    "relatedPoliciesLevel3": []
+  },
+  "level": 3
+}
