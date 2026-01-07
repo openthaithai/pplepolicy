@@ -1,0 +1,55 @@
+{
+  "policy": {
+    "id": 90,
+    "slug": "C-5-4",
+    "type": "Folder",
+    "title": "การพัฒนาผู้ประกอบการ/ผู้ให้บริการทางการเกษตรรุ่นใหม่",
+    "content": null,
+    "parentLevel1": {
+      "id": 11,
+      "slug": "C",
+      "title": "คุณภาพชีวิต"
+    },
+    "parentLevel2": {
+      "id": 20,
+      "slug": "C-5",
+      "title": "เกษตร"
+    },
+    "summary": null,
+    "budgetAmount": null,
+    "timelineYears": null,
+    "image": null,
+    "contentBlocks": [],
+    "tags": [],
+    "extraImages": [],
+    "children": [
+      {
+        "id": 135,
+        "title": "คูปองสนับสนุนการแปรรูปสินค้าเกษตร",
+        "slug": "C-5-4-01",
+        "type": "File",
+        "image": "a3b2c875-6b31-43d5-877b-59134a1809e2",
+        "children": []
+      },
+      {
+        "id": 136,
+        "title": "สนับสนุนผู้ประกอบการภาคเกษตรรุ่นใหม่",
+        "slug": "C-5-4-02",
+        "type": "File",
+        "image": "b9cae8fc-74db-4e8f-9326-a73bf9de8a23",
+        "children": []
+      },
+      {
+        "id": 137,
+        "title": "พัฒนาเกษตรไทยด้วยเกษตรกรรุ่นใหม่ (Young Smart Farmers) ",
+        "slug": "C-5-4-03",
+        "type": "File",
+        "image": "6f842048-556b-452e-b2f1-653ef77f95c2",
+        "children": []
+      }
+    ],
+    "relatedPoliciesLevel4": [],
+    "relatedPoliciesLevel3": []
+  },
+  "level": 3
+}

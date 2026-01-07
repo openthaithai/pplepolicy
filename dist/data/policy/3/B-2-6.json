@@ -1,0 +1,63 @@
+{
+  "policy": {
+    "id": 96,
+    "slug": "B-2-6",
+    "type": "Folder",
+    "title": "คืนผู้พ้นโทษคุณภาพสู่สังคม",
+    "content": null,
+    "parentLevel1": {
+      "id": 10,
+      "slug": "B",
+      "title": "ประชาธิปไตยและความมั่นคงใหม่"
+    },
+    "parentLevel2": {
+      "id": 13,
+      "slug": "B-2",
+      "title": "ปฏิรูปกระบวนการยุติธรรม"
+    },
+    "summary": null,
+    "budgetAmount": null,
+    "timelineYears": null,
+    "image": null,
+    "contentBlocks": [],
+    "tags": [],
+    "extraImages": [],
+    "children": [
+      {
+        "id": 155,
+        "title": "เรียนออนไลน์ในเรือนจำ เปลี่ยนห้องขังเป็นโอกาส ",
+        "slug": "B-2-6-01",
+        "type": "File",
+        "image": "1f98d296-fe0c-41f6-9413-32ce434ab5f4",
+        "children": []
+      },
+      {
+        "id": 156,
+        "title": "ฐานข้อมูลกลางราชทัณฑ์ ป้องกันการทำผิดซ้ำ",
+        "slug": "B-2-6-02",
+        "type": "File",
+        "image": null,
+        "children": []
+      },
+      {
+        "id": 157,
+        "title": "คืนผู้พ้นโทษสู่สังคมด้วยการลดหย่อนภาษีนายจ้าง",
+        "slug": "B-2-6-03",
+        "type": "File",
+        "image": "7ce3e5b2-bff1-4ad6-960f-145b1eeb521d",
+        "children": []
+      },
+      {
+        "id": 158,
+        "title": "ปฏิรูปเรือนจำให้โปร่งใส",
+        "slug": "B-2-6-04",
+        "type": "File",
+        "image": "8b21ec36-2259-4a2e-bce4-344f828698cc",
+        "children": []
+      }
+    ],
+    "relatedPoliciesLevel4": [],
+    "relatedPoliciesLevel3": []
+  },
+  "level": 3
+}

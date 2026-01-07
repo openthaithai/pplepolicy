@@ -1,0 +1,55 @@
+{
+  "policy": {
+    "id": 44,
+    "slug": "B-1-4",
+    "type": "Folder",
+    "title": "ประสิทธิภาพ เป็นทหารมืออาชีพ",
+    "content": null,
+    "parentLevel1": {
+      "id": 10,
+      "slug": "B",
+      "title": "ประชาธิปไตยและความมั่นคงใหม่"
+    },
+    "parentLevel2": {
+      "id": 12,
+      "slug": "B-1",
+      "title": "กองทัพทันสมัย"
+    },
+    "summary": null,
+    "budgetAmount": null,
+    "timelineYears": null,
+    "image": null,
+    "contentBlocks": [],
+    "tags": [],
+    "extraImages": [],
+    "children": [
+      {
+        "id": 138,
+        "title": "ยกเลิกบังคับการเกณฑ์ทหาร สู่ทหารอาชีพ",
+        "slug": "B-1-4-01",
+        "type": "File",
+        "image": "d2e89f93-3f2e-4d78-85da-9b583903918f",
+        "children": []
+      },
+      {
+        "id": 139,
+        "title": "แก้ปัญหาหนี้สินทหารชั้นผู้น้อย",
+        "slug": "B-1-4-02",
+        "type": "File",
+        "image": "770e71f0-5669-4f50-bb87-aaf318be70bb",
+        "children": []
+      },
+      {
+        "id": 140,
+        "title": "ลดนายพล เพิ่มสวัสดิการทหารชั้นผู้น้อย",
+        "slug": "B-1-4-03",
+        "type": "File",
+        "image": "e0970c23-2ebc-4d7d-8cdd-047256776a4e",
+        "children": []
+      }
+    ],
+    "relatedPoliciesLevel4": [],
+    "relatedPoliciesLevel3": []
+  },
+  "level": 3
+}

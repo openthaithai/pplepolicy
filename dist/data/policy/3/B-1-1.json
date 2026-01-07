@@ -1,0 +1,55 @@
+{
+  "policy": {
+    "id": 41,
+    "slug": "B-1-1",
+    "type": "Folder",
+    "title": "กองทัพเพื่อประชาชน",
+    "content": null,
+    "parentLevel1": {
+      "id": 10,
+      "slug": "B",
+      "title": "ประชาธิปไตยและความมั่นคงใหม่"
+    },
+    "parentLevel2": {
+      "id": 12,
+      "slug": "B-1",
+      "title": "กองทัพทันสมัย"
+    },
+    "summary": null,
+    "budgetAmount": null,
+    "timelineYears": null,
+    "image": null,
+    "contentBlocks": [],
+    "tags": [],
+    "extraImages": [],
+    "children": [
+      {
+        "id": 102,
+        "title": "แก้ไข พ.ร.บ. กลาโหม",
+        "slug": "B-1-1-01",
+        "type": "File",
+        "image": "155a6016-2e74-41a2-976f-d597b6082157",
+        "children": []
+      },
+      {
+        "id": 103,
+        "title": "ยุบ กอ.รมน. เปลี่ยนผ่านชายแดนใต้สู่สันติภาพ",
+        "slug": "B-1-1-02",
+        "type": "File",
+        "image": "ffcf8b67-f9b2-4f4a-928b-71b2e740b5df",
+        "children": []
+      },
+      {
+        "id": 104,
+        "title": "ยกเครื่องกฎหมายความมั่นคงที่ล้าสมัย",
+        "slug": "B-1-1-03",
+        "type": "File",
+        "image": "e6665d09-a75e-4b03-a582-9278cfbcfc89",
+        "children": []
+      }
+    ],
+    "relatedPoliciesLevel4": [],
+    "relatedPoliciesLevel3": []
+  },
+  "level": 3
+}

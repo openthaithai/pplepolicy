@@ -1,0 +1,63 @@
+{
+  "policy": {
+    "id": 25,
+    "slug": "C-1-2",
+    "type": "Folder",
+    "title": "เพิ่มศักยภาพของระบบบริการสุขภาพ (\"จากสิทธิถ้วนหน้า สู่สุขภาพดีในชีวิตจริง\")",
+    "content": null,
+    "parentLevel1": {
+      "id": 11,
+      "slug": "C",
+      "title": "คุณภาพชีวิต"
+    },
+    "parentLevel2": {
+      "id": 16,
+      "slug": "C-1",
+      "title": "ปฏิรูประบบสุขภาพไทย"
+    },
+    "summary": null,
+    "budgetAmount": null,
+    "timelineYears": null,
+    "image": null,
+    "contentBlocks": [],
+    "tags": [],
+    "extraImages": [],
+    "children": [
+      {
+        "id": 20,
+        "title": "การฟื้นฟูผู้คุณภาพชีวิตให้ผู้ป่วยระยะกลาง (Intermediate Care: IMC)",
+        "slug": "C-1-2-03",
+        "type": "File",
+        "image": "5d1420b9-9abd-4fd7-a4c5-9459be284875",
+        "children": []
+      },
+      {
+        "id": 21,
+        "title": "สร้างสุขภาพใจถ้วนหน้า (mental health for all)",
+        "slug": "C-1-2-04",
+        "type": "File",
+        "image": "f6b6e41b-81f3-4cef-85c6-ddf9264e9d46",
+        "children": []
+      },
+      {
+        "id": 71,
+        "title": "สร้างระบบดูแลผู้สูงอายุและผู้ป่วยระยะยาว (Long Term Care)",
+        "slug": "C-1-2-01",
+        "type": "File",
+        "image": "57b0c347-b6db-4379-8e3a-be3f21d3e682",
+        "children": []
+      },
+      {
+        "id": 72,
+        "title": "พัฒนาระบบดูแลแบบประคับประคอง เพื่อวาระสุดท้ายที่มีคุณภาพ (palliative care)",
+        "slug": "C-1-2-02",
+        "type": "File",
+        "image": "a8b596fa-25b0-4ff1-9413-85de759921f1",
+        "children": []
+      }
+    ],
+    "relatedPoliciesLevel4": [],
+    "relatedPoliciesLevel3": []
+  },
+  "level": 3
+}

@@ -1,0 +1,55 @@
+{
+  "policy": {
+    "id": 68,
+    "slug": "D-6-3",
+    "type": "Folder",
+    "title": "เศรษฐกิจสร้างสรรค์",
+    "content": null,
+    "parentLevel1": {
+      "id": 8,
+      "slug": "D",
+      "title": "โมเดลเศรษฐกิจใหม่"
+    },
+    "parentLevel2": {
+      "id": 29,
+      "slug": "D-6",
+      "title": "ท่องเที่ยว กีฬา เศรษฐกิจสร้างสรรค์"
+    },
+    "summary": null,
+    "budgetAmount": null,
+    "timelineYears": null,
+    "image": null,
+    "contentBlocks": [],
+    "tags": [],
+    "extraImages": [],
+    "children": [
+      {
+        "id": 110,
+        "title": "อุตสาหกรรมหนังไทยสู่หัวใจเศรษฐกิจสร้างสรรค์",
+        "slug": "D-6-3-06",
+        "type": "File",
+        "image": "44c9b917-3708-47ad-8796-74b1cbebe979",
+        "children": []
+      },
+      {
+        "id": 111,
+        "title": "ส่งเสริมอุตสาหกรรมเกมไทยและ E-Sport",
+        "slug": "D-6-3-07",
+        "type": "File",
+        "image": "583008cf-93dd-4070-a99e-56273b9d093d",
+        "children": []
+      },
+      {
+        "id": 112,
+        "title": "ส่งเสริมอุตสาหกรรมหนังสือ",
+        "slug": "D-6-3-08",
+        "type": "File",
+        "image": "60fe9a2d-82d3-4fe8-8fb9-b8aac04399dd",
+        "children": []
+      }
+    ],
+    "relatedPoliciesLevel4": [],
+    "relatedPoliciesLevel3": []
+  },
+  "level": 3
+}
