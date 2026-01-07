@@ -2,7 +2,6 @@ import React, { memo } from 'react';
 import { Handle, Position, NodeProps } from 'reactflow';
 import { ChevronRight, ChevronDown, FileText, Folder } from 'lucide-react';
 import styles from './CustomNode.module.css';
-import policyPlaceholder from '/placeholder_policy.png';
 
 interface CustomNodeData {
     title: string;
@@ -10,15 +9,18 @@ interface CustomNodeData {
     type: 'Folder' | 'File';
     loading?: boolean;
     image?: string;
+    childImages?: string[];
     level?: number;
     isHighlighted?: boolean;
     isDimmed?: boolean;
 }
 
-const CustomNode = ({ data, id, isConnectable }: NodeProps<CustomNodeData>) => {
+const CustomNode = ({ data, id, isConnectable, sourcePosition = Position.Right, targetPosition = Position.Left }: NodeProps<CustomNodeData>) => {
     const isFolder = data.type === 'Folder';
     const imageUrl = data.image
-        ? `https://directus.pplethai.org/assets/${data.image}.jpg`
+        ? (data.image.startsWith('/') || data.image.startsWith('http'))
+            ? data.image
+            : `https://directus.pplethai.org/assets/${data.image}.jpg`
         : null;
 
     // Dynamic sizing based on hierarchy level
@@ -48,20 +50,41 @@ const CustomNode = ({ data, id, isConnectable }: NodeProps<CustomNodeData>) => {
                 height: isRoot ? 400 : 320,
             }}
         >
-            {/* Target Handle (Input) */}
-            <Handle
-                type="target"
-                position={Position.Left}
-                isConnectable={isConnectable}
-                className={styles.handle}
-            />
+            {/* Target Handle (Input) - Not needed for Root */}
+            {!isRoot && (
+                <Handle
+                    type="target"
+                    position={targetPosition}
+                    isConnectable={isConnectable}
+                    className={styles.handle}
+                // Hide handle visual if desired, or keep it
+                />
+            )}
 
             {/* Background Image or Fallback */}
-            {/* Background Image or Fallback */}
-            <div
-                className={styles.imageLayer}
-                style={{ backgroundImage: `url(${imageUrl || policyPlaceholder})` }}
-            />
+            {data.image ? (
+                <div
+                    className={styles.imageLayer}
+                    style={{ backgroundImage: `url(${imageUrl || '/pplepolicy/placeholder_policy.png'})` }}
+                />
+            ) : data.childImages && data.childImages.length > 0 ? (
+                <div className={styles.mixContainer}>
+                    {data.childImages.slice(0, 4).map((img, index) => (
+                        <div
+                            key={index}
+                            className={styles.mixImage}
+                            style={{
+                                backgroundImage: `url(https://directus.pplethai.org/assets/${img}.jpg)`,
+                            }}
+                        />
+                    ))}
+                </div>
+            ) : (
+                <div
+                    className={styles.imageLayer}
+                    style={{ backgroundImage: `url('/pplepolicy/placeholder_policy.png')` }}
+                />
+            )}
 
             {/* Gradient Overlay */}
             <div className={styles.overlay} />
@@ -77,13 +100,23 @@ const CustomNode = ({ data, id, isConnectable }: NodeProps<CustomNodeData>) => {
             {data.loading && <div className={styles.spinner} />}
 
             {/* Source Handle (Output) - Only for Folders */}
-            {isFolder && (
+            {isFolder && !isRoot && (
                 <Handle
                     type="source"
-                    position={Position.Right}
+                    position={sourcePosition}
                     isConnectable={isConnectable}
                     className={styles.handle}
                 />
+            )}
+
+            {/* Root Special Handles - 4 directions */}
+            {isRoot && (
+                <>
+                    <Handle type="source" position={Position.Top} id="source-top" isConnectable={isConnectable} className={styles.handle} style={{ top: 0, left: '50%', transform: 'translate(-50%, -50%)' }} />
+                    <Handle type="source" position={Position.Right} id="source-right" isConnectable={isConnectable} className={styles.handle} style={{ top: '50%', right: 0, transform: 'translate(50%, -50%)' }} />
+                    <Handle type="source" position={Position.Bottom} id="source-bottom" isConnectable={isConnectable} className={styles.handle} style={{ bottom: 0, left: '50%', transform: 'translate(-50%, 50%)' }} />
+                    <Handle type="source" position={Position.Left} id="source-left" isConnectable={isConnectable} className={styles.handle} style={{ top: '50%', left: 0, transform: 'translate(-50%, -50%)' }} />
+                </>
             )}
         </div>
     );

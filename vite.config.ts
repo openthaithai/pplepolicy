@@ -14,8 +14,5 @@ export default defineConfig({
             '@': path.resolve(__dirname, './src'),
         },
     },
-    base: '/pplepolicy',
-    server: {
-        port: 8080
-    }
+    base: '/pplepolicy'
 })

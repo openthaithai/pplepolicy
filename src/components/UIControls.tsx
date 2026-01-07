@@ -8,6 +8,7 @@ interface UIControlsProps {
     onSearchSelect: (node: PolicyNode) => void;
 }
 
+
 interface SearchResult {
     slug: string;
     title: string;

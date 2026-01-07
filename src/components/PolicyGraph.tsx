@@ -47,7 +47,7 @@ const PolicyGraphContent = ({ onNodeSelect }: PolicyGraphProps) => {
 
     const fetchChildrenJson = async (level: number, slug: string) => {
         try {
-            const response = await fetch(`/data/policy/${level}/${slug}.json`);
+            const response = await fetch(`/pplepolicy/data/policy/${level}/${slug}.json`);
             if (!response.ok) throw new Error("Failed");
             const json = await response.json();
             return json.policy.children;
@@ -67,16 +67,17 @@ const PolicyGraphContent = ({ onNodeSelect }: PolicyGraphProps) => {
             const loadInitialData = async () => {
                 const enrichedPolicies = await Promise.all(INITIAL_NODES.map(async (policy) => {
                     let imageUrl = (policy as any).image;
+                    let childImages: string[] = [];
 
                     // Fallback: If no image, try to fetch children and use first child's image
                     if (!imageUrl) {
                         const children = await fetchChildrenJson(policy.level, policy.slug);
                         if (children && children.length > 0) {
-                            imageUrl = children[0].image;
+                            childImages = children.map((c: any) => c.image).filter(Boolean);
                         }
                     }
 
-                    return { ...policy, image: imageUrl };
+                    return { ...policy, image: imageUrl, childImages };
                 }));
 
                 enrichedPolicies.forEach((policy, index) => {
@@ -91,15 +92,23 @@ const PolicyGraphContent = ({ onNodeSelect }: PolicyGraphProps) => {
                             slug: policy.slug,
                             level: policy.level,
                             hasLoaded: false,
-                            image: policy.image
+                            image: policy.image,
+                            childImages: (policy as any).childImages
                         },
                         position: { x: 0, y: 0 }, // Initial position, will be fixed by layout
                     });
+
+                    let sourceHandle = null;
+                    if (id.startsWith('A')) sourceHandle = 'source-top';
+                    if (id.startsWith('B')) sourceHandle = 'source-right';
+                    if (id.startsWith('C')) sourceHandle = 'source-bottom';
+                    if (id.startsWith('D')) sourceHandle = 'source-left';
 
                     newEdges.push({
                         id: `root-${id}`,
                         source: 'root',
                         target: id,
+                        sourceHandle,
                         type: 'smoothstep', // Better for directional graph
                         style: { stroke: 'rgba(244, 117, 36, 0.3)', strokeWidth: 2 },
                         markerEnd: {
@@ -377,7 +386,8 @@ const PolicyGraphContent = ({ onNodeSelect }: PolicyGraphProps) => {
                                 ...n.data,
                                 isExpanded: true,
                                 loading: false,
-                                hasLoaded: true
+                                hasLoaded: true,
+                                childImages: childrenToAdd.map((c: any) => c.data.image).filter(Boolean)
                             }
                         };
                     }
