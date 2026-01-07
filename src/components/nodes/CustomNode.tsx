@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import { Handle, Position, NodeProps } from 'reactflow';
 import { ChevronRight, ChevronDown, FileText, Folder } from 'lucide-react';
 import styles from './CustomNode.module.css';
+import placeholderImg from '@/assets/placeholder_policy.png';
 
 interface CustomNodeData {
     title: string;
@@ -20,7 +21,7 @@ const CustomNode = ({ data, id, isConnectable, sourcePosition = Position.Right, 
     const imageUrl = data.image
         ? (data.image.startsWith('/') || data.image.startsWith('http'))
             ? data.image
-            : `https://directus.pplethai.org/assets/${data.image}.jpg`
+            : (data.image.includes('assets') ? data.image : `https://directus.pplethai.org/assets/${data.image}.jpg`)
         : null;
 
     // Dynamic sizing based on hierarchy level
@@ -65,7 +66,7 @@ const CustomNode = ({ data, id, isConnectable, sourcePosition = Position.Right, 
             {data.image ? (
                 <div
                     className={styles.imageLayer}
-                    style={{ backgroundImage: `url(${imageUrl || '/pplepolicy/placeholder_policy.png'})` }}
+                    style={{ backgroundImage: `url(${imageUrl || placeholderImg})` }}
                 />
             ) : data.childImages && data.childImages.length > 0 ? (
                 <div className={styles.mixContainer}>
@@ -82,7 +83,7 @@ const CustomNode = ({ data, id, isConnectable, sourcePosition = Position.Right, 
             ) : (
                 <div
                     className={styles.imageLayer}
-                    style={{ backgroundImage: `url('/pplepolicy/placeholder_policy.png')` }}
+                    style={{ backgroundImage: `url(${placeholderImg})` }}
                 />
             )}
 

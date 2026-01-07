@@ -29,10 +29,11 @@ const UIControls = ({ onCenter, onSearchSelect }: UIControlsProps) => {
     React.useEffect(() => {
         if (isSearchOpen && index.length === 0) {
             setIsLoadingIndex(true);
-            fetch('/search-index.json')
-                .then(res => res.json())
-                .then(data => {
-                    setIndex(data);
+            import('@/data/search-index.json')
+                .then(module => {
+                    // unexpected default export or module structure handling
+                     // It is likely an array directly if it is a JSON file import
+                    setIndex((module.default || module) as unknown as SearchResult[]);
                     setIsLoadingIndex(false);
                 })
                 .catch(err => {

@@ -47,10 +47,8 @@ const PolicyGraphContent = ({ onNodeSelect }: PolicyGraphProps) => {
 
     const fetchChildrenJson = async (level: number, slug: string) => {
         try {
-            const response = await fetch(`/pplepolicy/data/policy/${level}/${slug}.json`);
-            if (!response.ok) throw new Error("Failed");
-            const json = await response.json();
-            return json.policy.children;
+            const module = await import(`../data/policy/${level}/${slug}.json`);
+            return module.default.policy.children;
         } catch (e) {
             console.error(e);
             return [];
@@ -119,10 +117,15 @@ const PolicyGraphContent = ({ onNodeSelect }: PolicyGraphProps) => {
                 });
 
                 setNodes((nds) => {
-                    const updatedNodes = [...nds, ...newNodes];
-                    return updatedNodes;
+                    const existingIds = new Set(nds.map(n => n.id));
+                    const uniqueNewNodes = newNodes.filter(n => !existingIds.has(n.id));
+                    return [...nds, ...uniqueNewNodes];
                 });
-                setEdges((eds) => [...eds, ...newEdges]);
+                setEdges((eds) => {
+                    const existingIds = new Set(eds.map(e => e.id));
+                    const uniqueNewEdges = newEdges.filter(e => !existingIds.has(e.id));
+                    return [...eds, ...uniqueNewEdges];
+                });
 
                 // Trigger layout after state update? 
                 // We depend on nodes/edges in next render to run layout?
