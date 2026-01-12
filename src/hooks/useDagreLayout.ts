@@ -172,11 +172,7 @@ const useDagreLayout = ({ setNodes, setEdges }: UseDagreLayoutProps) => {
         const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(nodes, edges);
         setNodes(layoutedNodes as Node[]);
         setEdges(layoutedEdges as Edge[]);
-
-        setTimeout(() => {
-            window.requestAnimationFrame(() => fitView({ duration: 800, padding: 0.2 }));
-        }, 10);
-    }, [getLayoutedElements, setNodes, setEdges, fitView]);
+    }, [getLayoutedElements, setNodes, setEdges]);
 
     return { runLayout };
 };

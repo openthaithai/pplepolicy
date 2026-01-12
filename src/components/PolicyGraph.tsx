@@ -138,13 +138,19 @@ const PolicyGraphContent = ({ onNodeSelect }: PolicyGraphProps) => {
         }
     }, [nodes.length]); // Run once when only root exists
 
-    // Auto-run layout when edges change (nodes added/removed)
-    // We use a debounce or check to ensure we have nodes
+    // Auto-run layout when edges change and handle initial fit
     useEffect(() => {
         if (nodes.length > 1 && edges.length > 0) {
             runLayout(nodes, edges);
+
+            // If this is the first substantial layout (e.g. just root and level 1), fit view
+            if (nodes.length <= 6) { // Heuristic: Initial load usually has few nodes
+                setTimeout(() => {
+                    window.requestAnimationFrame(() => fitView({ duration: 800, padding: 0.2 }));
+                }, 50);
+            }
         }
-    }, [nodes.length, edges.length, runLayout]);
+    }, [nodes.length, edges.length, runLayout, fitView]);
 
 
     const onConnect = useCallback(
@@ -370,6 +376,17 @@ const PolicyGraphContent = ({ onNodeSelect }: PolicyGraphProps) => {
                     }));
                 }
             }
+
+            // Focus on the clicked node
+            setTimeout(() => {
+                fitView({
+                    nodes: [{ id: node.id }],
+                    duration: 1200,
+                    padding: 2,
+                    minZoom: 0.5,
+                    maxZoom: 1.5
+                });
+            }, 100);
 
             // We need to add nodes and edges, then layout will trigger via effect
             setNodes((nds) => {
